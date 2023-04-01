@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="IconItem">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:padding">0.5dp</item>
+        <item name="android:tint">@color/white</item>
+        <item name="android:visibility">gone</item>
+    </style>
+    <style name="BaseCardViewStyle">
+        <item name="android:backgroundTint">@color/black_400</item>
+        <item name="cardCornerRadius">10dp</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="CardViewStyle" parent="BaseCardViewStyle">
+        <item name="android:layout_width">200dp</item>
+        <item name="android:layout_marginEnd">20dp</item>
+    </style>
+
+    <style name="CardListViewStyle" parent="BaseCardViewStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_marginBottom">20dp</item>
+    </style>
+
+    <style name="BaseCardImageStyle">
+        <item name="android:layout_height">120dp</item>
+        <item name="android:background">@color/gray_200</item>
+        <item name="android:scaleType">centerCrop</item>
+    </style>
+
+    <style name="CardImageStyle" parent="BaseCardImageStyle">
+        <item name="android:layout_width">130dp</item>
+    </style>
+    <style name="CardListImageStyle" parent="BaseCardImageStyle">
+        <item name="android:layout_width">match_parent</item>
+    </style>
+
+    <style name="IncludeIconStyle">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">14dp</item>
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:layout_marginStart">10dp</item>
+    </style>
+
+    <style name="TextColor">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="BaseTextStyle" parent="TextColor">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">0dp</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:fontFamily">@font/dosis_medium</item>
+        <item name="android:layout_marginEnd">10dp</item>
+        <item name="android:layout_marginStart">10dp</item>
+        <item name="android:layout_marginBottom">10dp</item>
+    </style>
+
+    <style name="TitleStyle" parent="BaseTextStyle">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">0dp</item>
+        <item name="android:layout_marginStart">10dp</item>
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:fontFamily">@font/dosis_bold</item>
+    </style>
+
+    <style name="TimeStyle" parent="BaseTextStyle">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginBottom">10dp</item>
+        <item name="android:layout_marginStart">10dp</item>
+        <item name="android:textSize">11sp</item>
+    </style>
+
+    <style name="FavoriteIconStyle">
+        <item name="android:layout_width">24dp</item>
+        <item name="android:layout_height">24dp</item>
+        <item name="android:layout_marginEnd">10dp</item>
+        <item name="android:layout_marginBottom">10dp</item>
+        <item name="android:tint">@color/white</item>
+    </style>
+
+    <style name="RatingIconStyle">
+        <item name="android:layout_width">14dp</item>
+        <item name="android:layout_height">14dp</item>
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:layout_marginEnd">2dp</item>
+    </style>
+
+    <style name="RatingTextStyle" parent="TextColor">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:fontFamily">@font/dosis_bold</item>
+        <item name="android:layout_marginEnd">10dp</item>
+        <item name="android:textSize">11sp</item>
+        <item name="android:text">@string/example_rating</item>
+    </style>
+
+</resources>

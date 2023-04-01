@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="flat_black">#212121</color>
+    <color name="flat_gray_800">#181920</color>
+    <color name="flat_gray_600">#555555</color>
+    <color name="flat_gray_400">#9A9A9A</color>
+    <color name="flat_gray_200">#B1B1B1</color>
+
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="black_800">#1B1C20</color>
+    <color name="black_600">#272A31</color>
+    <color name="black_400">#31363C</color>
+    <color name="blue">#4382E3</color>
+    <color name="gray_600">#86878B</color>
+    <color name="gray_200">#E7EBF4</color>
+    <color name="gray_100">#FAFAFA</color>
+    <color name="colorTransparent">#00000000</color>
+</resources>

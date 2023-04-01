@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/ConstraintLayoutStyle">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/to_visit_app_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:visibility="visible"
+        app:elevation="0dp">
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:id="@+id/to_visit_collapsing_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fitsSystemWindows="true"
+            app:layout_scrollFlags="scroll|enterAlways|enterAlwaysCollapsed">
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textInputLayout"
+                    style="@style/SearchBox"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/search"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="RtlSymmetry">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/search"
+                        style="@style/HintColor"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:hint="@string/search"
+                        android:singleLine="true" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.github.ybq.android.spinkit.SpinKitView
+                    android:id="@+id/loadingTopGames"
+                    style="@style/SpinKitView.CubeGrid"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginVertical="80dp"
+                    app:SpinKit_Color="@color/flat_gray_400"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/titleHotGames" />
+
+                <TextView
+                    android:id="@+id/titleHotGames"
+                    android:text="Top game"
+                    style="@style/TitleText"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textInputLayout"/>
+                <TextView
+                    android:id="@+id/noDataHotGame"
+                    style="@style/BaseTextStyle"
+                    android:layout_width="match_parent"
+                    android:gravity="center_horizontal"
+                    android:paddingVertical="40dp"
+                    android:text="@string/no_data"
+                    android:visibility="gone"
+                    android:textSize="14sp"
+                    app:layout_constraintTop_toBottomOf="@+id/titleHotGames" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/listHotGames"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="10dp"
+                    android:visibility="gone"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:listitem="@layout/item_card_game"
+                    app:layout_constraintTop_toBottomOf="@+id/titleHotGames"
+                    />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+        <TextView
+            android:id="@+id/titleGames"
+            android:text="Games list"
+            style="@style/TitleText"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/listHotNews"/>
+        <TextView
+            android:id="@+id/noDataGame"
+            style="@style/BaseTextStyle"
+            android:layout_width="match_parent"
+            android:gravity="center_horizontal"
+            android:paddingVertical="40dp"
+            android:text="@string/no_data"
+            android:visibility="gone"
+            android:textSize="14sp"
+            app:layout_constraintTop_toBottomOf="@+id/titleGames" />
+        <com.github.ybq.android.spinkit.SpinKitView
+            android:id="@+id/loadingGames"
+            style="@style/SpinKitView.CubeGrid"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginVertical="80dp"
+            app:SpinKit_Color="@color/flat_gray_400"/>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/listGames"
+        style="@style/RecyclerView"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        tools:listitem="@layout/item_list_game"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

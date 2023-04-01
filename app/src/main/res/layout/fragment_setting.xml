@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/ConstraintLayoutStyle"
+    tools:context=".setting.SettingFragment">
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        style="@style/Toolbar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <TextView
+            android:id="@+id/title"
+            android:text="@string/settings"
+            style="@style/TextToolbar" />
+    </androidx.appcompat.widget.Toolbar>
+    <TextView
+        style="@style/TextThemeStyle"
+        android:text="@string/clear_database"
+        app:layout_constraintBottom_toBottomOf="@+id/clear_database"
+        app:layout_constraintEnd_toStartOf="@+id/clear_database"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar" />
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/clear_database"
+        style="@style/ClearDatabaseIcon"
+        android:src="@drawable/baseline_delete_24"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@id/toolbar" />
+
+    <View
+        android:id="@+id/divider"
+        style="@style/DivStyle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/clear_database"/>
+
+    <TextView
+        android:id="@+id/textView"
+        style="@style/TextThemeStyle"
+        android:text="@string/dark_mode"
+        app:layout_constraintBottom_toBottomOf="@+id/switchTheme"
+        app:layout_constraintEnd_toStartOf="@+id/switchTheme"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/divider" />
+
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/switchTheme"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/divider"
+        app:trackTint="@drawable/switch_track_selector"
+        app:thumbTint="@drawable/switch_thumb_selector"/>
+</androidx.constraintlayout.widget.ConstraintLayout>
