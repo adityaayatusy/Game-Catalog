@@ -3,6 +3,7 @@ package com.aditya.dicoding.gamecatalog.core.data
 import com.aditya.dicoding.gamecatalog.core.data.source.remote.network.ApiResponse
 import kotlinx.coroutines.flow.*
 
+@Suppress("EmptyMethod")
 abstract class NetworkBoundResource<ResultType, RequestType>  {
 
     private var result: Flow<Resource<ResultType>> = flow {
