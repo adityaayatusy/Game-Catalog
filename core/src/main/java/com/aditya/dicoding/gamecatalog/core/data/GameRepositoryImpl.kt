@@ -12,6 +12,7 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.map
+import java.util.*
 import javax.inject.Inject
 import javax.inject.Singleton
 
@@ -82,7 +83,19 @@ class GameRepositoryImpl @Inject constructor(
     override fun getDetailGame(gameModel: GameModel): Flow<Resource<GameModel>> =
         object: NetworkBoundResource<GameModel, GameResponse>(){
             override fun loadFromDB(): Flow<GameModel> = localDataSource.getDetailGame(gameModel.gameId).map {
-                DataMapper.mapEntitieToDomain(it)
+                try {
+                    DataMapper.mapEntitieToDomain(it)
+                }catch (e: Exception){
+                    GameModel(
+                        gameId = -1,
+                        name = "",
+                        rating = 0f,
+                        image = "",
+                        platforms = emptyList(),
+                        updated = Date(),
+                        released = Date()
+                    )
+                }
             }
             override suspend fun createCall(): Flow<ApiResponse<GameResponse>> = remoteDataSource.gatDetailGame(gameModel.gameId)
 
