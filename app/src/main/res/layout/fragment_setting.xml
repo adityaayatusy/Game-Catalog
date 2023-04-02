@@ -25,10 +25,12 @@
     <androidx.appcompat.widget.AppCompatImageButton
         android:id="@+id/clear_database"
         style="@style/ClearDatabaseIcon"
+        android:contentDescription="@string/clear_database"
         android:src="@drawable/baseline_delete_24"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textView"
-        app:layout_constraintTop_toBottomOf="@id/toolbar" />
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        tools:ignore="DuplicateSpeakableTextCheck" />
 
     <View
         android:id="@+id/divider"

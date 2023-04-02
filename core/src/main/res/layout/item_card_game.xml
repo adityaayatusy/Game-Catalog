@@ -31,7 +31,8 @@
             android:src="@drawable/baseline_star_24"
             app:layout_constraintBottom_toBottomOf="@+id/list_icon"
             app:layout_constraintEnd_toStartOf="@+id/rating"
-            app:layout_constraintTop_toBottomOf="@+id/cardImage" />
+            app:layout_constraintTop_toBottomOf="@+id/cardImage"
+            tools:ignore="ImageContrastCheck" />
 
         <TextView
             android:id="@+id/rating"

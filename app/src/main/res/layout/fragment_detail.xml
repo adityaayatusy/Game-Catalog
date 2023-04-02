@@ -25,13 +25,15 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingBottom="20dp">
+
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/imageGame"
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
                 android:background="@color/gray_200"
                 android:src="@drawable/no_image"
-                app:layout_constraintTop_toTopOf="parent"/>
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="ImageContrastCheck" />
             <TextView
                 android:id="@+id/title"
                 style="@style/TitleDetail"

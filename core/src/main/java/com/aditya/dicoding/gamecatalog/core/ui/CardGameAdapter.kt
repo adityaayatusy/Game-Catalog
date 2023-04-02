@@ -11,7 +11,6 @@ import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.aditya.dicoding.gamecatalog.core.R
 import com.aditya.dicoding.gamecatalog.core.databinding.ItemCardGameBinding
 import com.aditya.dicoding.gamecatalog.core.domain.model.GameModel
-import com.aditya.dicoding.gamecatalog.core.utils.AppExecutors
 import com.aditya.dicoding.gamecatalog.core.utils.afterComa
 import com.aditya.dicoding.gamecatalog.core.utils.dateFormat
 import com.aditya.dicoding.gamecatalog.core.utils.has
@@ -43,16 +42,16 @@ class CardGameAdapter(
 
             cardTime.text = data.released.dateFormat()
 
-            AppExecutors().diskIO().execute {
-                data.platforms.forEach { platform ->
-                    if(platform.name.has("pc")) listIcon.windwosImage.visibility = View.VISIBLE
-                    if(platform.name.has("playstation")) listIcon.psImage.visibility = View.VISIBLE
-                    if(platform.name.has("xbox")) listIcon.xboxImage.visibility = View.VISIBLE
-                    if(platform.name.has("macos")) listIcon.macImage.visibility = View.VISIBLE
-                    if(platform.name.has("linux")) listIcon.linuxImage.visibility = View.VISIBLE
-                    if(platform.name.has("nintendo")) listIcon.nitendoImage.visibility = View.VISIBLE
-                    if(platform.name.has("android")) listIcon.androidImage.visibility = View.VISIBLE
-                    if(platform.name.has("ios")) listIcon.iosImage.visibility = View.VISIBLE
+            data.platforms.forEach { platform ->
+                when{
+                    platform.name.has("pc") -> listIcon.windwosImage.visibility = View.VISIBLE
+                    platform.name.has("playstation") -> listIcon.psImage.visibility = View.VISIBLE
+                    platform.name.has("xbox") -> listIcon.xboxImage.visibility = View.VISIBLE
+                    platform.name.has("macos") -> listIcon.macImage.visibility = View.VISIBLE
+                    platform.name.has("linux") -> listIcon.linuxImage.visibility = View.VISIBLE
+                    platform.name.has("nintendo") -> listIcon.nitendoImage.visibility = View.VISIBLE
+                    platform.name.has("android") -> listIcon.androidImage.visibility = View.VISIBLE
+                    platform.name.has("ios") -> listIcon.iosImage.visibility = View.VISIBLE
                 }
             }
 

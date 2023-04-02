@@ -40,7 +40,9 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:hint="@string/search"
-                        android:singleLine="true" />
+                        android:singleLine="true"
+                        android:textColorHint="#546E7A"
+                        tools:ignore="VisualLintTextFieldSize" />
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <com.github.ybq.android.spinkit.SpinKitView
@@ -58,7 +60,7 @@
 
                 <TextView
                     android:id="@+id/titleHotGames"
-                    android:text="Top game"
+                    android:text="@string/top_game"
                     style="@style/TitleText"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/textInputLayout"/>
@@ -92,7 +94,7 @@
 
         <TextView
             android:id="@+id/titleGames"
-            android:text="Games list"
+            android:text="@string/games_list"
             style="@style/TitleText"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/listHotNews"/>

@@ -7,6 +7,6 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
 @HiltViewModel
-class SplashViewModel @Inject constructor(private val gameUseCase: GameUseCase): ViewModel() {
+class SplashViewModel @Inject constructor(gameUseCase: GameUseCase): ViewModel() {
     val isDark = gameUseCase.getThemeSetting().asLiveData()
 }
