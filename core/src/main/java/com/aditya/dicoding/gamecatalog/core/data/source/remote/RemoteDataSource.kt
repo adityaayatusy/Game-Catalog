@@ -1,7 +1,8 @@
+@file:Suppress("unused", "unused", "unused", "unused", "unused", "unused")
+
 package com.aditya.dicoding.gamecatalog.core.data.source.remote
 
 import android.annotation.SuppressLint
-import android.util.Log
 import com.aditya.dicoding.gamecatalog.core.BuildConfig
 import com.aditya.dicoding.gamecatalog.core.data.source.remote.network.ApiResponse
 import com.aditya.dicoding.gamecatalog.core.data.source.remote.network.ApiService
@@ -10,11 +11,13 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.flowOn
+import timber.log.Timber
 import java.text.SimpleDateFormat
 import java.util.*
 import javax.inject.Inject
 import javax.inject.Singleton
 
+@Suppress("unused")
 @Singleton
 class RemoteDataSource @Inject constructor(private val apiService: ApiService)  {
     @SuppressLint("SimpleDateFormat")
@@ -46,7 +49,7 @@ class RemoteDataSource @Inject constructor(private val apiService: ApiService)  
             emit(ApiResponse.Success(response))
         }catch (e: Exception){
             emit(ApiResponse.Error(e.toString()))
-            Log.e(this@RemoteDataSource.javaClass.simpleName, "gatDetailGame: ", e)
+            Timber.e("gatDetailGame: ", e)
         }
     }.flowOn(Dispatchers.IO)
 
@@ -72,7 +75,7 @@ class RemoteDataSource @Inject constructor(private val apiService: ApiService)  
                 }
             }catch (e: Exception){
                 emit(ApiResponse.Error(e.toString()))
-                Log.e(this@RemoteDataSource.javaClass.simpleName, "getGames: ", e)
+                Timber.e("getGames: ", e)
             }
         }.flowOn(Dispatchers.IO)
 }

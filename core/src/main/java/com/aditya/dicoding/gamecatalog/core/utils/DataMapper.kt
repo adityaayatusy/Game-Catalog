@@ -5,7 +5,7 @@ import com.aditya.dicoding.gamecatalog.core.data.source.remote.response.GameResp
 import com.aditya.dicoding.gamecatalog.core.data.source.remote.response.PlatformResponse
 import com.aditya.dicoding.gamecatalog.core.domain.model.GameModel
 import com.aditya.dicoding.gamecatalog.core.domain.model.PlatformModel
-
+@Suppress("unused")
 object DataMapper {
     fun mapEntitiesToDomain(input: List<GameWithPlatforms>): List<GameModel> =
         input.map {

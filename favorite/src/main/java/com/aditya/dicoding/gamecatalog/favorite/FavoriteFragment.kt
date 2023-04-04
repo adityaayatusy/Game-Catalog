@@ -63,5 +63,7 @@ class FavoriteFragment : BaseFragment<FragmentFavoriteBinding>(), GameListenerIn
         parentFragment?.parentFragment?.findNavController()?.navigate(toDetail)
     }
 
-
+    override fun destroy() {
+        binding.rvFavorite.adapter = null
+    }
 }

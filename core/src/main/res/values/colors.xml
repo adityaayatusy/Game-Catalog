@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="flat_black">#212121</color>
-    <color name="flat_gray_800">#181920</color>
-    <color name="flat_gray_600">#555555</color>
     <color name="flat_gray_400">#9A9A9A</color>
-    <color name="flat_gray_200">#B1B1B1</color>
 
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>

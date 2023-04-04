@@ -4,6 +4,7 @@ import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
+@Suppress("unused", "unused", "unused", "unused", "unused")
 @Entity(tableName = "platform")
 data class PlatformEntity(
     @PrimaryKey(autoGenerate = false)

@@ -3,7 +3,7 @@ package com.aditya.dicoding.gamecatalog.core.domain.repository
 import com.aditya.dicoding.gamecatalog.core.data.Resource
 import com.aditya.dicoding.gamecatalog.core.domain.model.GameModel
 import kotlinx.coroutines.flow.Flow
-
+@Suppress("unused")
 interface GameRepository {
     fun getAllGame(): Flow<Resource<List<GameModel>>>
     fun getTopGames(): Flow<Resource<List<GameModel>>>

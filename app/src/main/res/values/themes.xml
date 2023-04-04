@@ -14,7 +14,9 @@
         <item name="android:navigationBarColor">@color/black_600</item>
         <!-- Customize your theme here. -->
     </style>
-
+    <style name="SplashScreenStyle">
+        <item name="android:background">@color/black_800</item>
+    </style>
     <style name="LogoText" parent="BaseTextStyle">
         <item name="android:textColor">@color/white</item>
         <item name="android:fontFamily">@font/rubik_mono_one</item>

@@ -11,6 +11,7 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 import javax.inject.Inject
 
+@Suppress("unused")
 class SettingPreference @Inject constructor(@ApplicationContext private val context: Context)  {
     private val Context.dataStore: DataStore<Preferences> by preferencesDataStore("Setting")
     private val theme = booleanPreferencesKey("theme_setting")

@@ -25,4 +25,6 @@ class MainFragment : BaseFragment<FragmentMainBinding>() {
         }
     }
 
+    override fun destroy() {}
+
 }

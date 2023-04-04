@@ -1,6 +1,5 @@
 package com.aditya.dicoding.gamecatalog.search
 
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -21,6 +20,7 @@ import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
+import timber.log.Timber
 
 @AndroidEntryPoint
 class SearchFragment : BaseFragment<FragmentSearchBinding>(), GameListenerInterface {
@@ -77,7 +77,7 @@ class SearchFragment : BaseFragment<FragmentSearchBinding>(), GameListenerInterf
                     }
                     is Resource.Error -> {
                         hideLoading()
-                        Log.d(tag, getString(R.string.error, games.message))
+                        Timber.e(getString(R.string.error, games.message))
                     }
                 }
             }
@@ -113,5 +113,7 @@ class SearchFragment : BaseFragment<FragmentSearchBinding>(), GameListenerInterf
         }
     }
 
-
+    override fun destroy() {
+        binding.listGames.adapter = null
+    }
 }

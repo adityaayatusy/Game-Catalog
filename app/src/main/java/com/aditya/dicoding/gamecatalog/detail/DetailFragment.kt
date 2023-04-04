@@ -1,6 +1,5 @@
 package com.aditya.dicoding.gamecatalog.detail
 
-import android.util.Log
 import android.view.*
 import androidx.core.view.MenuProvider
 import androidx.core.view.get
@@ -16,6 +15,7 @@ import com.aditya.dicoding.gamecatalog.core.utils.dateFormat
 import com.aditya.dicoding.gamecatalog.databinding.FragmentDetailBinding
 import com.bumptech.glide.Glide
 import dagger.hilt.android.AndroidEntryPoint
+import timber.log.Timber
 
 @AndroidEntryPoint
 class DetailFragment : BaseFragment<FragmentDetailBinding>(), MenuProvider {
@@ -62,6 +62,7 @@ class DetailFragment : BaseFragment<FragmentDetailBinding>(), MenuProvider {
             }
         }
     }
+
 
     override fun onCreateMenu(menu: Menu, menuInflater: MenuInflater) {
         menuInflater.inflate(R.menu.favorite, menu)
@@ -124,7 +125,7 @@ class DetailFragment : BaseFragment<FragmentDetailBinding>(), MenuProvider {
                         }
                         is com.aditya.dicoding.gamecatalog.core.data.Resource.Error -> {
                             hideLoading()
-                            Log.d("TAG22", "error: "+ it.message)
+                            Timber.e("error: "+ it.message)
                         }
                     }
                 }
@@ -148,7 +149,7 @@ class DetailFragment : BaseFragment<FragmentDetailBinding>(), MenuProvider {
                         }
                         is com.aditya.dicoding.gamecatalog.core.data.Resource.Error -> {
                             hideLoading()
-                            Log.d("TAG22", "error: "+ it.message)
+                            Timber.e(getString(R.string.error, it.message))
                         }
                     }
                 }
@@ -156,4 +157,8 @@ class DetailFragment : BaseFragment<FragmentDetailBinding>(), MenuProvider {
         }
     }
 
+
+    override fun destroy(){
+        mainActivity.setSupportActionBar(null)
+    }
 }

@@ -16,6 +16,7 @@ import com.aditya.dicoding.gamecatalog.core.utils.dateFormat
 import com.aditya.dicoding.gamecatalog.core.utils.has
 import com.bumptech.glide.Glide
 
+@Suppress("unused")
 class CardGameAdapter(
     private val gameListenerInterface: GameListenerInterface
 ): RecyclerView.Adapter<CardGameAdapter.ListGameHolder>() {
@@ -31,7 +32,6 @@ class CardGameAdapter(
         val data = differ.currentList[position]
 
         with(holder.binding){
-
             cardTitle.text = data.name
             Glide.with(context)
                 .load(data.image)

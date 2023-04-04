@@ -1,12 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="EntryPointsManager">
-    <list size="4">
-      <item index="0" class="java.lang.String" itemvalue="dagger.Binds" />
-      <item index="1" class="java.lang.String" itemvalue="dagger.Binds" />
-      <item index="2" class="java.lang.String" itemvalue="dagger.Module" />
-      <item index="3" class="java.lang.String" itemvalue="dagger.Module" />
+    <entry_points version="2.0">
+      <entry_point TYPE="method" FQNAME="com.aditya.dicoding.gamecatalog.core.utils.ExtenstionKt java.lang.String dateFormat(java.util.Date $this$dateFormat)" />
+      <entry_point TYPE="method" FQNAME="com.aditya.dicoding.gamecatalog.core.utils.ExtenstionKt float afterComa(float $this$afterComa, java.lang.String format)" />
+      <entry_point TYPE="file" FQNAME="file://$PROJECT_DIR$/core/src/main/java/com/aditya/dicoding/gamecatalog/core/utils/Extenstion.kt" />
+      <entry_point TYPE="method" FQNAME="com.aditya.dicoding.gamecatalog.core.utils.ExtenstionKt boolean has(java.lang.String $this$has, java.lang.String text)" />
+    </entry_points>
+    <list size="12">
+      <item index="0" class="java.lang.String" itemvalue="androidx.room.TypeConverter" />
+      <item index="1" class="java.lang.String" itemvalue="androidx.room.TypeConverter" />
+      <item index="2" class="java.lang.String" itemvalue="androidx.room.TypeConverter" />
+      <item index="3" class="java.lang.String" itemvalue="dagger.Binds" />
+      <item index="4" class="java.lang.String" itemvalue="dagger.Binds" />
+      <item index="5" class="java.lang.String" itemvalue="dagger.Module" />
+      <item index="6" class="java.lang.String" itemvalue="dagger.Module" />
+      <item index="7" class="java.lang.String" itemvalue="dagger.Provides" />
+      <item index="8" class="java.lang.String" itemvalue="dagger.Provides" />
+      <item index="9" class="java.lang.String" itemvalue="dagger.Provides" />
+      <item index="10" class="java.lang.String" itemvalue="dagger.Provides" />
+      <item index="11" class="java.lang.String" itemvalue="dagger.Provides" />
     </list>
+    <pattern value="com.aditya.dicoding.gamecatalog.core.data.source.remote.network.ApiResponse.Error" method="Error" />
+    <pattern value="com.aditya.dicoding.gamecatalog.core.data.source.remote.network.ApiResponse.Success" method="Success" />
+    <pattern value="com.aditya.dicoding.gamecatalog.core.ui.CardGameAdapter.ListGameHolder" />
+    <pattern value="com.aditya.dicoding.gamecatalog.core.ui.CardGameAdapter.ListGameHolder" method="ListGameHolder" />
+    <pattern value="com.aditya.dicoding.gamecatalog.setting.SettingViewModel" method="saveThemeSetting" />
+    <pattern value="com.aditya.dicoding.gamecatalog.core.data.Resource" />
+    <pattern value="com.aditya.dicoding.gamecatalog.core.data.Resource" method="Resource" />
+    <pattern value="com.aditya.dicoding.gamecatalog.core.data.source.remote.response.PlatformResponse" />
+    <pattern value="com.aditya.dicoding.gamecatalog.core.data.source.remote.response.PlatformResponse" method="PlatformResponse" />
+    <pattern value="com.aditya.dicoding.gamecatalog.core.data.source.remote.response.Platform" />
+    <pattern value="com.aditya.dicoding.gamecatalog.core.data.source.remote.response.Platform" method="Platform" />
+    <pattern value="com.aditya.dicoding.gamecatalog.core.data.NetworkBoundResource" />
+    <pattern value="com.aditya.dicoding.gamecatalog.core.data.NetworkBoundResource" method="saveCallResult" />
+    <pattern value="com.aditya.dicoding.gamecatalog.core.data.source.remote.response.ListGameResponse" />
+    <pattern value="com.aditya.dicoding.gamecatalog.core.data.source.remote.response.ListGameResponse" method="ListGameResponse" />
+    <pattern value="com.aditya.dicoding.gamecatalog.core.ui.ListGameAdapter" />
+    <pattern value="com.aditya.dicoding.gamecatalog.core.ui.ListGameAdapter" method="ListGameAdapter" />
+    <pattern value="com.aditya.dicoding.gamecatalog.core.ui.ListGameAdapter.ListGameHolder" />
+    <pattern value="com.aditya.dicoding.gamecatalog.core.ui.ListGameAdapter.ListGameHolder" method="ListGameHolder" />
   </component>
   <component name="ExternalStorageConfigurationManager" enabled="true" />
   <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">

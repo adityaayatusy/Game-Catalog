@@ -43,4 +43,6 @@ class SettingFragment : BaseFragment<FragmentSettingBinding>() {
         }
 
     }
+
+    override fun destroy() {}
 }

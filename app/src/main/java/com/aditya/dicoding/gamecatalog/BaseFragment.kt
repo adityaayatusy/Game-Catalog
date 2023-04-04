@@ -32,6 +32,7 @@ abstract class BaseFragment<VB: ViewBinding>: Fragment() {
     }
 
     abstract fun setup()
+    abstract fun destroy()
 
     protected fun statusBarColor(int: Int){
         mainActivity.window.statusBarColor = ContextCompat.getColor(mainActivity, int)
@@ -45,8 +46,9 @@ abstract class BaseFragment<VB: ViewBinding>: Fragment() {
         }
     }
 
-    override fun onDestroy() {
-        super.onDestroy()
+    override fun onDestroyView() {
+        super.onDestroyView()
+        destroy()
         _binding = null
     }
 }

@@ -1,6 +1,5 @@
 package com.aditya.dicoding.gamecatalog.home
 
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -23,6 +22,7 @@ import kotlinx.coroutines.Job
 import kotlinx.coroutines.MainScope
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
+import timber.log.Timber
 
 @AndroidEntryPoint
 class HomeFragment : BaseFragment<FragmentHomeBinding>(), GameListenerInterface {
@@ -86,13 +86,12 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(), GameListenerInterface 
 
     private fun loadSearch(){
         MainScope().launch {
-            with(binding){
-                search.setText("")
-                search.addTextChangedListener {
+            binding.search.apply {
+                setText("")
+                addTextChangedListener {
                     job?.cancel()
                     job = lifecycleScope.launch {
                         delay(500)
-                        Log.d(tag, "setup s: ${search.text}")
                         val toSearch = MainFragmentDirections.actionMainFragmentToSearchFragment(it.toString())
                         parentFragment?.parentFragment?.findNavController()?.navigate(toSearch)
                     }
@@ -134,8 +133,12 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(), GameListenerInterface 
             }
             is Resource.Error -> {
                 hideLoading()
-                Log.d(tag, getString(R.string.error, games.message))
+                Timber.e(getString(R.string.error, games.message))
             }
         }
+    }
+    override fun destroy() {
+        binding.listGames.adapter = null
+        binding.listHotGames.adapter = null
     }
 }
