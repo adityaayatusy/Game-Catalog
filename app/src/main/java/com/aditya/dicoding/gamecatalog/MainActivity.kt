@@ -11,6 +11,7 @@ import timber.log.Timber
 class MainActivity : BaseActivity<ActivityMainBinding>() {
     override val bindingInflater: (LayoutInflater) -> ActivityMainBinding = ActivityMainBinding::inflate
 
+    @Suppress("SpellCheckingInspection")
     override fun setup() {
         if (this.validateSignature("6eKEXlelenZGsrb43zNwEY5AgQU=") == Result.VALID) {
            Timber.d("Valid")

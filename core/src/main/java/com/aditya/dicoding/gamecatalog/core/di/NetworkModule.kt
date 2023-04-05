@@ -18,6 +18,7 @@ import java.util.concurrent.TimeUnit
 
 @Module
 @InstallIn(SingletonComponent::class)
+@Suppress("SpellCheckingInspection")
 class NetworkModule {
 
     @Provides

@@ -15,6 +15,7 @@ enum class Result {
     UNKNOWN
 }
 
+@Suppress("unused", "SameReturnValue")
 fun Context.validateSignature(expectedSignature: String): Result {
     getAppSignature(this)?.string()?.let { currentSignature ->
         Timber.d("EXPECTED_SIGNATURE $currentSignature")
@@ -27,6 +28,7 @@ fun Context.validateSignature(expectedSignature: String): Result {
     return Result.UNKNOWN
 }
 
+@Suppress("DEPRECATION", "unused")
 @SuppressLint("PackageManagerGetSignatures")
 private fun getAppSignature(context: Context): Signature? = if (Build.VERSION.SDK_INT < 28) {
     context.packageManager.getPackageInfo(
@@ -40,6 +42,7 @@ private fun getAppSignature(context: Context): Signature? = if (Build.VERSION.SD
     ).signingInfo.apkContentsSigners.firstOrNull()
 }
 
+@Suppress("unused")
 private fun Signature.string(): String? = try {
     val signatureBytes = toByteArray()
     val digest = MessageDigest.getInstance("SHA")
