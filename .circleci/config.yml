@@ -34,11 +34,11 @@ jobs:
       - run:
           name: Run Tests
           command: ./gradlew lint test
-      - run:
-          name: Check Vulnerabilities
-          command: ./gradlew dependencyCheckAnalyze
       - store_test_results:
           path: app/build/test-results
+      - run:
+          name: Check Vulnerability
+          command: ./gradlew dependencyCheckAnalyze
       - run:
           name: Run Build
           command: ./gradlew build
