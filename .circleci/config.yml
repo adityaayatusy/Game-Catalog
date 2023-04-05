@@ -3,9 +3,14 @@ version: 2.1
 orbs:
   android: circleci/android@1.0.3
 
+workflows:
+    test-and-build:
+        jobs:
+            - test-and-build:
+                context: GAME_CATALOG 
+
 jobs:
   test-and-build:
-    context: GAME_CATALOG
     working_directory: ~/repo
     executor: android/android
     steps:
