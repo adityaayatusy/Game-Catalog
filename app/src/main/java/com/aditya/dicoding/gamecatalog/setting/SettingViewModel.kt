@@ -1,5 +1,6 @@
 package com.aditya.dicoding.gamecatalog.setting
 
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.asLiveData
 import androidx.lifecycle.viewModelScope
@@ -11,7 +12,9 @@ import javax.inject.Inject
 
 @HiltViewModel
 class SettingViewModel @Inject constructor(private val gameUseCase: GameUseCase): ViewModel() {
-    val getThemeSetting = gameUseCase.getThemeSetting().asLiveData()
+    fun getThemeSetting(): LiveData<Boolean> {
+        return gameUseCase.getThemeSetting().asLiveData()
+    }
     fun saveThemeSetting(isDark: Boolean){
         viewModelScope.launch(Dispatchers.IO) {
             gameUseCase.setThemeSetting(isDark)

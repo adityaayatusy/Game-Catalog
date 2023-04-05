@@ -18,7 +18,7 @@ class SettingFragment : BaseFragment<FragmentSettingBinding>() {
         statusBarColor(R.color.black_600)
 
         with(binding){
-            settingViewModel.getThemeSetting.observe(viewLifecycleOwner){
+            settingViewModel.getThemeSetting().observe(viewLifecycleOwner){
                 switchTheme.isChecked = it
                 changeTheme(it)
             }
