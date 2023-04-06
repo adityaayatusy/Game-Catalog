@@ -1,11 +1,11 @@
 package com.aditya.dicoding.gamecatalog
 
+import android.app.AlertDialog
 import android.view.LayoutInflater
 import com.aditya.dicoding.gamecatalog.core.utils.Result
 import com.aditya.dicoding.gamecatalog.core.utils.validateSignature
 import com.aditya.dicoding.gamecatalog.databinding.ActivityMainBinding
 import dagger.hilt.android.AndroidEntryPoint
-import timber.log.Timber
 
 @AndroidEntryPoint
 class MainActivity : BaseActivity<ActivityMainBinding>() {
@@ -13,10 +13,15 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
 
     @Suppress("SpellCheckingInspection")
     override fun setup() {
-        if (this.validateSignature("6eKEXlelenZGsrb43zNwEY5AgQU=") == Result.VALID) {
-           Timber.d("Valid")
-        } else {
-            Timber.d("Not Valid")
+        if (this.validateSignature("6eKEXlelenZGsrb43zNwEY5AgQU=") == Result.INVALID) {
+            AlertDialog.Builder(this)
+                .setTitle("Security Issue!")
+                .setMessage("Anda terdeteksi mengubah source code aplikasi ini")
+                .setCancelable(false)
+                .setNegativeButton("Oke") { _, _ ->
+                    finishAffinity()
+                }
+                .show()
         }
     }
 }

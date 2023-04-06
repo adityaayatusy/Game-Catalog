@@ -47,7 +47,7 @@ class FavoriteFragment : BaseFragment<FragmentFavoriteBinding>(), GameListenerIn
 
         favoriteViewModel.favoriteGame.observe(viewLifecycleOwner) { dataGames ->
             listGameAdapter.differ.submitList(dataGames)
-            binding.noFavorite.visibility = if (dataGames.isNotEmpty()) View.GONE else View.VISIBLE
+            binding.noFavorite.noData.visibility = if (dataGames.isNotEmpty()) View.GONE else View.VISIBLE
         }
 
         with(binding.rvFavorite){

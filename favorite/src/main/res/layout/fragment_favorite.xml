@@ -21,13 +21,17 @@
         tools:listitem="@layout/item_list_game"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/no_favorite"/>
+        app:layout_constraintTop_toBottomOf="@+id/noFavorite"/>
 
-    <TextView
-        android:id="@+id/no_favorite"
-        style="@style/TextNoData"
-        android:text="@string/no_data"
+    <include
+        android:id="@+id/noFavorite"
+        layout="@layout/no_data_view"
+        android:layout_width="0dp"
+        android:visibility="gone"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar"/>
+        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

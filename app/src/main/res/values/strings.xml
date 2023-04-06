@@ -21,4 +21,5 @@
     <string name="error">error:%1$s</string>
     <string name="search">Search</string>
     <string name="search_title">Search: %1$s</string>
+    <string name="not_found">Not Found</string>
 </resources>

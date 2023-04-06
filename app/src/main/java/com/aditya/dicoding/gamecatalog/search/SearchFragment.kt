@@ -36,6 +36,9 @@ class SearchFragment : BaseFragment<FragmentSearchBinding>(), GameListenerInterf
         }
 
         with(binding){
+            noDataGame.tvNoData.text = getString(R.string.not_found)
+            noDataGame.imNoData.setAnimation("search_not_found.json")
+
             btnBack.setOnClickListener {
                 findNavController().navigateUp()
             }
@@ -64,7 +67,7 @@ class SearchFragment : BaseFragment<FragmentSearchBinding>(), GameListenerInterf
 
         searchViewModel.search(keyword).observe(viewLifecycleOwner){ games ->
             if(games !is Resource.Loading)
-                binding.noDataGame.visibility = if (games.data == null) View.VISIBLE else View.GONE
+                binding.noDataGame.noData.visibility = if (games.data == null) View.VISIBLE else View.GONE
 
             if (games != null) {
                 when(games){
